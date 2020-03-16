@@ -23,7 +23,6 @@
   "homepage": "https://github.com/farisaziz12/cortrack_backend#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "@sap/xssec": "^2.1.17",
     "hdb": "^0.17.0",
     "nodemailer": "^6.2.1",
     "passport": "~0.4.0",
