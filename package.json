@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/farisaziz12/cortrack_backend#readme",
   "dependencies": {
-    "@sap/cds": "^3.10.0",
     "express": "^4.17.1",
     "@sap/xssec": "^2.1.17",
     "hdb": "^0.17.0",
