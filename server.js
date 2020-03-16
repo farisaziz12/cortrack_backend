@@ -12,6 +12,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+var port = process.env.PORT || 8080;
+
 function formatDate(d) {
 	//get the month
 	var month = d.getMonth();
@@ -199,7 +201,7 @@ function readRecovered() {
 	});
 }
 
-module.exports = function () {
+// module.exports = function () {
 	// var app = express.Router();
 	var userScope = null;
 
@@ -233,5 +235,10 @@ module.exports = function () {
 		msg();
 	});
 
-	return app;
-};
+// 	return app;
+// };
+
+
+app.listen(port, function() {
+	console.log('Our app is running on http://localhost:' + port);
+});
