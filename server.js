@@ -216,13 +216,13 @@ function readRecovered() {
 
 			for (var i = 0; i < header_msg.length; i++) {
 				result.push({
-					'Province/State': header_msg[i]['Province/State'],
-					'Country/Region': header_msg[i]['Country/Region'],
+					// 'Province/State': header_msg[i]['Province/State'],
+					// 'Country/Region': header_msg[i]['Country/Region'],
 					'Lat': parseFloat(header_msg[i]['Lat']),
 					'Long': parseFloat(header_msg[i]['Long']),
-					'Recovered': parseFloat(recovered_msg[i]),
+					// 'Recovered': parseFloat(recovered_msg[i]),
 					'Confirmed': parseFloat(confirmed_msg[i]),
-					'Death': parseFloat(death_msg[i])
+					// 'Death': parseFloat(death_msg[i])
 				})
 			}
 
