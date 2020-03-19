@@ -216,7 +216,7 @@ function readRecovered() {
 
 			for (var i = 0; i < header_msg.length; i++) {
 				result.push({
-					// 'Province/State': header_msg[i]['Province/State'],
+					'ProvinceState': header_msg[i]['Province/State'],
 					'CountryRegion': header_msg[i]['Country/Region'],
 					'Lat': parseFloat(header_msg[i]['Lat']),
 					'Long': parseFloat(header_msg[i]['Long']),
