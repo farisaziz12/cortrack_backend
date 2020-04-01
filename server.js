@@ -15,11 +15,12 @@ app.use(cors())
 var port = process.env.PORT || 8080;
 
 function formatDate(d) {
+	console.log(d)
 	//get the month
 	var month = d.getMonth();
 	//get the day
 	//convert day to string
-	var day = d.getDate().toString() - 1;
+	var day = d.getDate().toString() ;
 	//get the year
 	var year = d.getFullYear();
 
@@ -67,8 +68,8 @@ function readHeader() {
 						.then((csvRow) => {
 							const result = [];
 							var d = new Date();
-							var date = formatDate(d);
-							console.log(date);
+							var yesterday = new Date(d.setDate(d.getDate() - 1))
+							var date = formatDate(yesterday);
 							for (var i = 0; i < csvRow.length; i++) {
 								result.push({
 									'Province/State': csvRow[i]['Province/State'],
@@ -98,6 +99,7 @@ function readConfirmed() {
 				// A chunk of data has been recieved.
 				resp.on('data', (chunk) => {
 					data += chunk;
+					console.log(data)
 				});
 
 				// The whole response has been received. Print out the result.
@@ -110,8 +112,8 @@ function readConfirmed() {
 						.then((csvRow) => {
 							const result = [];
 							var d = new Date();
-							var date = formatDate(d);
-							console.log(date);
+							var yesterday = new Date(d.setDate(d.getDate() - 1))
+							var date = formatDate(yesterday);
 							for (var i = 0; i < csvRow.length; i++) {
 								result.push(csvRow[i][date]);
 							}
@@ -148,8 +150,8 @@ function readDeath() {
 						.then((csvRow) => {
 							const result = [];
 							var d = new Date();
-							var date = formatDate(d);
-							console.log(date);
+							var yesterday = new Date(d.setDate(d.getDate() - 1))
+							var date = formatDate(yesterday);
 							for (var i = 0; i < csvRow.length; i++) {
 								result.push(csvRow[i][date]);
 							}
@@ -186,8 +188,8 @@ function readRecovered() {
 						.then((csvRow) => {
 							const result = [];
 							var d = new Date();
-							var date = formatDate(d);
-							console.log(date);
+							var yesterday = new Date(d.setDate(d.getDate() - 1))
+							var date = formatDate(yesterday);
 							for (var i = 0; i < csvRow.length; i++) {
 								result.push(csvRow[i][date]);
 							}
